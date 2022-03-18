@@ -4,7 +4,7 @@ This repository provides some sample code for the Shared Project for
 Modern Cryptography and Security Management & Compliance.  The project
 requires Python 3 and MongoDB.
 
-## Setup
+## Setup the Project
 
 Install Python 3 and the required libraries.
 
@@ -14,13 +14,16 @@ pip3 install -r requirements.txt
 
 Install and start MongoDB.
 
-To start the server:
 
-```sh
-python3 run_server.py
+Create the MongoDB databases:
+
 ```
+use cyberStudentSurvey;
+db.createCollection('users');
 
-The server is available on port 4000.
+use cyberStudentSurveyTest;
+db.createCollection('users');
+```
 
 ## Test the Project
 
@@ -30,18 +33,22 @@ You can run the automated tests using:
 python run_test.py
 ```
 
-## Usage
+## Start the Project
 
-To check that the server is running:
+To start the server:
 
 ```sh
+python3 run_server.py
+```
 
-http://localhost:4000/cyber/api
+The server is available on port 4000 at http://localhost:4000/cyber/api.
+
+## Usage
 
 To register a new user:
 
 ```sh
-curl -X POST http://localhost:4000/cyber/api/registration -d '{"email": "foo@bar.com", "password": "pass", "displayName": "Mr. Foo Bar"}'
+curl -X POST http://localhost:4000/cyber/api/registration -d '{"email": "foo@bar.com", "password": "pass", "displayName": "Foo Bar"}'
 ```
 
 ## Tokens

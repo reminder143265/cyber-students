@@ -29,4 +29,3 @@ class Application(Application):
         self.db = MotorClient(**MONGODB_HOST)[MONGODB_DBNAME]
 
         self.executor = ThreadPoolExecutor(WORKERS)
-
