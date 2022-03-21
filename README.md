@@ -6,18 +6,27 @@ requires Python 3 and MongoDB.
 
 ## Setup the Project
 
-Install Python 3 and the required libraries.
+Create a Python 3 virtual environment:
 
 ```sh
+python3 -m venv project-venv
+source project-venv/bin/activate
+```
+
+Install the required packages:
+
+```sh
+cd cyber-student-survey
 pip3 install -r requirements.txt
 ```
 
 Install and start MongoDB.
 
-
 Create the MongoDB databases:
 
 ```
+mongo
+
 use cyberStudentSurvey;
 db.createCollection('users');
 
@@ -30,7 +39,7 @@ db.createCollection('users');
 You can run the automated tests using:
 
 ```sh
-python run_test.py
+python3 run_test.py
 ```
 
 ## Start the Project
