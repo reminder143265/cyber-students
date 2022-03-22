@@ -5,6 +5,6 @@ MONGODB_HOST = {
     'port': 27017
 }
 
-MONGODB_DBNAME = 'cyberStudentSurveyTest'
+MONGODB_DBNAME = 'cyberStudentsTest'
 
 WORKERS = 1

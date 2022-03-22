@@ -1,4 +1,4 @@
-# `cyber-student-survey`
+# `cyber-students`
 
 This repository provides some sample code for the Shared Project for
 Modern Cryptography and Security Management & Compliance.  The project
@@ -16,7 +16,7 @@ source project-venv/bin/activate
 Install the required packages:
 
 ```sh
-cd cyber-student-survey
+cd cyber-students
 pip3 install -r requirements.txt
 ```
 
@@ -27,10 +27,10 @@ Create the MongoDB databases:
 ```
 mongo
 
-use cyberStudentSurvey;
+use cyberStudents;
 db.createCollection('users');
 
-use cyberStudentSurveyTest;
+use cyberStudentsTest;
 db.createCollection('users');
 ```
 
@@ -50,14 +50,14 @@ To start the server:
 python3 run_server.py
 ```
 
-The server is available on port 4000 at http://localhost:4000/cyber/api.
+The server is available on port 4000 at http://localhost:4000/students/api.
 
 ## Usage
 
 To register a new user:
 
 ```sh
-curl -X POST http://localhost:4000/cyber/api/registration -d '{"email": "foo@bar.com", "password": "pass", "displayName": "Foo Bar"}'
+curl -X POST http://localhost:4000/students/api/registration -d '{"email": "foo@bar.com", "password": "pass", "displayName": "Foo Bar"}'
 ```
 
 ## Tokens

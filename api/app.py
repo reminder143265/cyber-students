@@ -14,12 +14,12 @@ class Application(Application):
 
     def __init__(self):
         handlers = [
-            (r'/cyber/?', WelcomeHandler),
-            (r'/cyber/api/?', WelcomeHandler),
-            (r'/cyber/api/registration', RegistrationHandler),
-            (r'/cyber/api/login', LoginHandler),
-            (r'/cyber/api/logout', LogoutHandler),
-            (r'/cyber/api/user', UserHandler)
+            (r'/students/?', WelcomeHandler),
+            (r'/students/api/?', WelcomeHandler),
+            (r'/students/api/registration', RegistrationHandler),
+            (r'/students/api/login', LoginHandler),
+            (r'/students/api/logout', LogoutHandler),
+            (r'/students/api/user', UserHandler)
         ]
 
         settings = dict()
