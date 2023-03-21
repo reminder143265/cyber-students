@@ -37,13 +37,12 @@ python -m venv project-venv
 Activate the virtual environment:
 
 ```bat
-:: Windows:
+:: ... on Windows:
 .\project-venv\Scripts\activate
 ```
 
-(*nix)
 ```sh
-# *nix:
+# ... on macOS/*nix:
 source project-venv/bin/activate
 ```
 
@@ -157,7 +156,7 @@ password, it will return an error message:
 {"message": "The email address and password are invalid!"}
 ```
 
-### Displaying Profile
+### Displaying a Profile
 
 To display a user's profile you need to a token that has not expired.
 Then you can use:
