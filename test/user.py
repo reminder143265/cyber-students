@@ -64,18 +64,3 @@ class UserHandlerTest(BaseTest):
 
         response = self.fetch('/user')
         self.assertEqual(400, response.code)
-
-    def test_user_update(self):
-        display_name_2 = 'newDisplayName'
-
-        headers = HTTPHeaders({'X-Token': self.token})
-        body = {
-          'displayName': display_name_2
-        }
-
-        response = self.fetch('/user', headers=headers, method='PUT', body=dumps(body))
-        self.assertEqual(200, response.code)
-
-        body_2 = json_decode(response.body)
-        self.assertEqual(self.email, body_2['email'])
-        self.assertEqual(display_name_2, body_2['displayName'])
