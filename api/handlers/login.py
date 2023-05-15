@@ -6,6 +6,9 @@ from uuid import uuid4
 
 from .base import BaseHandler
 
+import os
+from cryptography.hazmat.primitives.kdf.scrypt import Scrypt
+
 class LoginHandler(BaseHandler):
 
     @coroutine
@@ -52,12 +55,20 @@ class LoginHandler(BaseHandler):
         user = yield self.db.users.find_one({
           'email': email
         }, {
-          'password': 1
+          'password': 1,
+          'salt': 1
         })
 
         if user is None:
             self.send_error(403, message='The email address and password are invalid!')
             return
+
+        # hashing password using hazmat cryptography library
+
+        salt = user['salt']
+        kdf = Scrypt(salt=salt, length=32, n=2**14, r=8, p=1)
+        passphrase_bytes = bytes(password, "utf-8")
+        hashed_passphrase = kdf.derive(passphrase_bytes)
 
         if user['password'] != password:
             self.send_error(403, message='The email address and password are invalid!')
